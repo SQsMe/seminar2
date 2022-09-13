@@ -1,14 +1,18 @@
-﻿// Напишите программу, которая принимает на вход трехзначное число и на выходе показывает вторую цифру этого числа.
-// 456 -> 5
-// 782 -> 8
-// 918 -> 1
+﻿// Напишите программу, которая выводит третью цифру заданного числа или сообщает, что третьей цифры нет
 
-// int n = new Random().Next(100, 1000); // эти две строчки просто выводят случайное число
-//
-// System.Console.WriteLine(n);
-//
-// System.Console.WriteLine((n / 10) % 10);
-
-// Вариант решения от препода
-int n = 531;
-System.Console.WriteLine(n / 10 % 10); // n/10 - число перестанет быть трехзначным 531 = 53, а потом мы 53 % 10, остаток от деления = 3
+// Console.Write("Введи число: ");
+// int anyNumber = Convert.ToInt32(Console.ReadLine()); //задаем переменную anyNumber
+// string anyNumberText = Convert.ToString(anyNumber); // переводим в ряд чисел
+// if (anyNumberText.Length > 2){
+//  Console.WriteLine($"третья цифра" + anyNumberText[2]); //тут не ставятся {} внутри совместно с []}
+// else {
+//  Console.WriteLine("третьей цифры нет");
+// }
+int n = new Random().Next(100, 10000);
+if (n < 100){                           // проверяем на трехзначность
+  System.Console.WriteLine("Третьей цифры нет");
+}
+else{
+  int result = n / 100 % 10; // третье число
+  System.Console.WriteLine($"Третья цифра цисла {n} --> {result}");
+}
